@@ -15,7 +15,12 @@ spec:
       containers:
         - name: auth
           image: 215160/auth
-
+          env:
+            - name: JWT_KEY
+              valueFrom:
+                secretKeyRef
+                  name: jwt-secret
+                  key: JWT_KEY
 ---
 
 
