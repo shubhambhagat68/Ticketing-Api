@@ -1,0 +1,26 @@
+{
+  "name": "@shtickets/common",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./build/index.js",
+  "types": "./build/index.d.js",
+  "files": [
+    "build/**/*"
+  ],
+  "scripts": {
+    "clean": "del ./build/*",
+    "build": "npm run clean && tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/cookie-session": "^2.0.43",
+    "@types/express": "^4.17.13",
+    "@types/jsonwebtoken": "^8.5.4",
+    "cookie-session": "^1.4.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.12.1",
+    "jsonwebtoken": "^8.5.1"
+  }
+}
