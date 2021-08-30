@@ -8,7 +8,7 @@ build:
   local:
     push: false
   artifacts:
-    - image: 215160/auth
+    - image: stephengrider/auth
       context: auth
       docker:
         dockerfile: Dockerfile
@@ -16,7 +16,7 @@ build:
         manual:
           - src: 'src/**/*.ts'
             dest: .
-    - image: 215160/client
+    - image: stephengrider/client
       context: client
       docker:
         dockerfile: Dockerfile
@@ -24,7 +24,7 @@ build:
         manual:
           - src: '**/*.js'
             dest: .
-    - image: 215160/tickets
+    - image: stephengrider/tickets
       context: tickets
       docker:
         dockerfile: Dockerfile

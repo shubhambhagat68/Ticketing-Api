@@ -5,7 +5,7 @@ metadata:
 spec:
   replicas: 1
   selector:
-    matchLabels: 
+    matchLabels:
       app: tickets
   template:
     metadata:
@@ -14,18 +14,16 @@ spec:
     spec:
       containers:
         - name: tickets
-          image: 215160/tickets
+          image: stephengrider/tickets
           env:
             - name: MONGO_URI
-              value: 'mongoose://tickets-mongo-srv:27017/tickets'
+              value: 'mongodb://tickets-mongo-srv:27017/tickets'
             - name: JWT_KEY
               valueFrom:
-                secretKeyRef
+                secretKeyRef:
                   name: jwt-secret
                   key: JWT_KEY
 ---
-
-
 apiVersion: v1
 kind: Service
 metadata:

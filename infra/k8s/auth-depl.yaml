@@ -5,7 +5,7 @@ metadata:
 spec:
   replicas: 1
   selector:
-    matchLabels: 
+    matchLabels:
       app: auth
   template:
     metadata:
@@ -14,18 +14,16 @@ spec:
     spec:
       containers:
         - name: auth
-          image: 215160/auth
+          image: stephengrider/auth
           env:
             - name: MONGO_URI
-              value: 'mongoose://auth-mongo-srv:27017/auth'
+              value: 'mongodb://auth-mongo-srv:27017/auth'
             - name: JWT_KEY
               valueFrom:
-                secretKeyRef
+                secretKeyRef:
                   name: jwt-secret
                   key: JWT_KEY
 ---
-
-
 apiVersion: v1
 kind: Service
 metadata:
